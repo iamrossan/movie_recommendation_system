@@ -6,10 +6,12 @@ movies = pickle.load(open('movie_list.pkl', 'rb'))
 similarity = pickle.load(open('similarity.pkl', 'rb'))
 selectMovies = st.text_input("Enter Movies Title")
 
+
 def recommend_similar_movies(movie_name):
     calculatedMovies = []
     index = movies[movies['title'] == movie_name].index[0]
-    distances = sorted(list(enumerate(similarity[index])), reverse=True, key=lambda x: x[1])
+    distances = sorted(
+        list(enumerate(similarity[index])), reverse=True, key=lambda x: x[1])
     for i in distances[1:10]:
         calculatedMovies.append(movies.iloc[i[0]].title)
     return calculatedMovies
@@ -39,8 +41,9 @@ if selectMovies:
             st.error(displayMovies[7])
         with c9:
             st.error(displayMovies[8])
+
     except:
-        
+        st.warning("Something went wrong")
 
 
 hide_streamlit_style = """
