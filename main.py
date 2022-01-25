@@ -43,7 +43,7 @@ if selectMovies:
             st.error(displayMovies[8])
 
     except:
-        st.warning("Something went wrong")
+        st.warning("Incorrect Movie Title")
 
 
 hide_streamlit_style = """
