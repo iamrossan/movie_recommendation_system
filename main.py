@@ -16,28 +16,31 @@ def recommend_similar_movies(movie_name):
 
 
 if selectMovies:
-    displayMovies = recommend_similar_movies(selectMovies)
-    c1, c2, c3 = st.columns(3)
-    c4, c5, c6 = st.columns(3)
-    c7, c8, c9 = st.columns(3)
-    with c1:
-        st.info(displayMovies[0])
-    with c2:
-        st.info(displayMovies[1])
-    with c3:
-        st.info(displayMovies[2])
-    with c4:
-        st.warning(displayMovies[3])
-    with c5:
-        st.warning(displayMovies[4])
-    with c6:
-        st.warning(displayMovies[5])
-    with c7:
-        st.error(displayMovies[6])
-    with c8:
-        st.error(displayMovies[7])
-    with c9:
-        st.error(displayMovies[8])
+    try:
+        displayMovies = recommend_similar_movies(selectMovies)
+        c1, c2, c3 = st.columns(3)
+        c4, c5, c6 = st.columns(3)
+        c7, c8, c9 = st.columns(3)
+        with c1:
+            st.info(displayMovies[0])
+        with c2:
+            st.info(displayMovies[1])
+        with c3:
+            st.info(displayMovies[2])
+        with c4:
+            st.warning(displayMovies[3])
+        with c5:
+            st.warning(displayMovies[4])
+        with c6:
+            st.warning(displayMovies[5])
+        with c7:
+            st.error(displayMovies[6])
+        with c8:
+            st.error(displayMovies[7])
+        with c9:
+            st.error(displayMovies[8])
+    except:
+        
 
 
 hide_streamlit_style = """
